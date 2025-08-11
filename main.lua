@@ -1,6 +1,5 @@
 local Recursao = {}
 
--- Modelagem: fatorial(n) = n * fatorial(n-1) se n > 1, senão 1
 function Recursao.fatorial(n)
     if n == 0 or n == 1 then
         return 1
@@ -9,7 +8,6 @@ function Recursao.fatorial(n)
     end
 end
 
--- Modelagem: somatorio(n) = n + somatorio(n-1) se n > 0, senão 0
 function Recursao.somatorio(n)
     if n == 0 then
         return 0
@@ -18,7 +16,6 @@ function Recursao.somatorio(n)
     end
 end
 
--- Modelagem: fibonacci(n) = fibonacci(n-1) + fibonacci(n-2) se n > 1, senão n
 function Recursao.fibonacci(n)
     if n == 0 then
         return 0
@@ -29,7 +26,6 @@ function Recursao.fibonacci(n)
     end
 end
 
--- Modelagem: somatorio_entre(k,j) = k + somatorio_entre(k+1,j) se k < j, senão k
 function Recursao.somatorio_entre(k, j)
     if k == j then
         return k
@@ -38,7 +34,6 @@ function Recursao.somatorio_entre(k, j)
     end
 end
 
--- Modelagem: isPal(s) = true se |s| <= 1, senão s[0] == s[-1] && isPal(s[1:-1])
 function Recursao.isPal(s)
     if #s <= 1 then
         return true
@@ -47,7 +42,6 @@ function Recursao.isPal(s)
     end
 end
 
--- Modelagem: convBase2(n) = convBase2(n/2) + (n%2) se n > 1, senão n
 function Recursao.convBase2(n)
     if n == 0 then
         return "0"
@@ -58,7 +52,6 @@ function Recursao.convBase2(n)
     end
 end
 
--- Modelagem: somatorio_lista(lista, i) = lista[i] + somatorio_lista(lista, i+1) se i <= |lista|, senão 0
 function Recursao.somatorio_lista(lista, index)
     index = index or 1
     if index > #lista then
@@ -68,7 +61,6 @@ function Recursao.somatorio_lista(lista, index)
     end
 end
 
--- Modelagem: findBiggest(lista, i) = max(lista[i], findBiggest(lista, i+1)) se i < |lista|, senão lista[i]
 function Recursao.findBiggest(lista, index)
     index = index or 1
     if index > #lista then
@@ -81,7 +73,6 @@ function Recursao.findBiggest(lista, index)
     end
 end
 
--- Modelagem: findSubStr(str, match) = true se str começa com match, senão findSubStr(str[1:], match)
 function Recursao.findSubStr(str, match)
     if #match == 0 then
         return true
@@ -97,7 +88,6 @@ function Recursao.findSubStr(str, match)
     end
 end
 
--- Modelagem: nroDigit(n) = 1 + nroDigit(n/10) se n > 0, senão 1
 function Recursao.nroDigit(n)
     if n == 0 then
         return 1
@@ -106,7 +96,6 @@ function Recursao.nroDigit(n)
     end
 end
 
--- Modelagem: permutations(s) = [s[0] + p | p ∈ permutations(s[1:])] ∪ [s[i] + p | p ∈ permutations(s[:i] + s[i+1:])]
 function Recursao.permutations(s)
     if #s <= 1 then
         return {s}
